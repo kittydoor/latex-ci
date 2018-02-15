@@ -15,7 +15,7 @@ git:
 before_deploy:
   - git config --local user.name "Katherine Door"
   - git config --local user.email "kittydoordev@gmail.com"
-  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - git tag "hello-$(git log --format=%h -1).py"
 deploy:
   provider: releases
   api_key:
