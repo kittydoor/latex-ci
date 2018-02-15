@@ -1,10 +1,11 @@
-language: python
-python:
-  - '3.6'
-install:
-  - pip install -r requirements.txt
+language: generic
+addons:
+  apt:
+    packages:
+    - texlive-base
+    - texlive-xetex
 script:
-  - pytest
+  - xelatex -interaction=nonstopmode -halt-on-error doc.tex
 notifications:
   email:
     recipients:
@@ -15,11 +16,12 @@ git:
 before_deploy:
   - git config --local user.name "Katherine Door"
   - git config --local user.email "kittydoordev@gmail.com"
-  - git tag "hello-$(git log --format=%h -1).py"
+  - git tag "doc-$(git log --format=%h -1).pdf"
 deploy:
   provider: releases
   api_key:
     secure: VHdxclZqB7ysJRAp460yaZB6PLWcM5WUjKFiPFwuweOYar++6Yaan8u5ro7h1AeKJYISpgYoy0nzpTqCAaw6mYnuTyg6LaE+hrA++Ncs+rIcu5IXkPsoS1QEsiM2ChVk1tyRrXEm9g1cQeLOdzGn7T87kP8hTVfhPqOG8kyIuPyztMhfK8xzTDxEuE8wNMVJp567kA16PGhuCDhSwzpQmjYhEZrDmnuIKijJX2rRtFpv9NsubEVppykB+NItNQ+U/N3f+RK6L2vcqNrcoV3frVDUARnbk+dMDuHQCYsE4nExIsx7huXz8DjF0k67TYBU4q/S5+ipmfdCTYRoVxOeFUgna9n1a1DdjPVhzMWg4QdH134ffpJNabX1MygPWR2Oj1djSAe99/Gxm5IwbGQ0U6D2Q1FmUBmBufPC6/EdyPgfw2JgfwQNh+mLxjWdRo4UX/5Z6yrZM/xtjdgtJsY8A25nDLywn6T0vQAFwek6qkDh+aBC+GJG6Aa8E8F4+Peza1i+NegaW56h17bg4I9YANdpYJv4N3b4tFYm4e2+JbMSEGNgqHsrXFvLBJQcTW0a/UKyRgP4JTQkhk0uKnkuHdR8QNyzPYQr3LrL6ed+5BvV+braem2kJIkWEGehijHAc8bYxZgfAL46YFBEb5kHBqbq9715FglWHWNDmXlfCt8=
-  file: hello.py
+  file: doc.pdf
+  skip_cleanup: true
   on:
     repo: kittydoor/latex-ci
