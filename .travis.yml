@@ -14,5 +14,6 @@ deploy:
   api_key:
     secure: qgTDLczKkDhj/4ZpihuBAfVadtkXKqSAJdWjQaRCgABBDAwpQKAn4mt//SUITNeUVxQYd0n5Dq+5X0R7IJd8ARIGZ0QT8qp2XX9MS/y8IApsL1FX6GNi5DBmZqCCVm9hbyPHG7ziZqy0qs94UuOs+XvLQMN/B92avTg38aHl57qk4Nw5NxXdVQqE+sR2Curw//QzauYV3KPBFtz5hd7fcxP/ckWpX+HJTRl0VLWbDZ07VOVTwoxLjSpSHonQRQ+VrOr+UVgpiJj9gco+U9MH/qgVc7DMJqntf8zMgL78HANz4cXPus8dDfrTcwmEgYzA/1bSrhZYDVs5cGZmq0acCWueX0bgGDMlIliLFNOW5o6U/DQLz+ijMy1O4B1zdIkb+PkD2IacusAsYpjqPvUFSC2KKkfZgcLmTTAseWrtYx7IRzhjFYzcMdrXN1h2H/XI6j8rj4M32JO6mgv14fttAK/1tvgVNg3si6Nqhj14ZR2OD5TiczUSGzRNsjmbkSvlLZRgtMTaQ6j36zHnfIc+XjRhwuo6NPB9JL6HY/rEKFSXyDby2HrvBh0cmeUgiJNloEXQe4DEuuSYwuUP6N5KsHu+ls7mD1fLDHYvq9/FAvKYu38nLCiUAcFYnx5YYZi+yh2njDfn7/5W0d3oTIpHb2Ygjv0OD7/r99FQ2lJXwwk=
     file: hello.py
+    skip_cleanup: true
     on:
       repo: kittydoor/latex-ci
