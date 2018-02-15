@@ -1,4 +1,4 @@
 def hello_world():
-    return "Hello World0"
+    return "Hello World"
 
 print(hello_world())
