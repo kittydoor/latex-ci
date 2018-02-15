@@ -1,14 +1,21 @@
 language: python
 python:
-- '3.6'
+  - '3.6'
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
 script:
-- pytest
+  - pytest
 notifications:
   email:
     recipients:
     - kittydoordev@gmail.com
+git:
+  depth: false
+  submodules: false
+before_deploy:
+  - git config --local user.name "Katherine Door"
+  - git config --local user.email "kittydoordev@gmail.com"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
